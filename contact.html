@@ -24,14 +24,14 @@
     <div class="main">
         <div class="contactform">
             <h1>Contact Me For Colaboration</h1>
-            <form action="/sign_up" method="POST">
+            <form onsubmit="submitForm()">
                 <div class="mb-3">
                   <label for="clientemail" class="form-label">Email address</label>
                   <input type="email" class="form-control" id="clientemail"  name ="clientemail" aria-describedby="emailHelp">
                   <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                 </div>
                 <div class="mb-3">
-                    <label for="clientemail" class="form-label">Name</label>
+                    <label for="clientname" class="form-label">Name</label>
                     <input type="name" class="form-control" id="clientname" name ="clientname" aria-describedby="emailHelp">
                   </div>
                 <div class="mb-3">
@@ -39,7 +39,7 @@
                   <input type="phone number" class="form-control" id="clientphone" name ="clientphone">
                 </div>
                 <div class="mb-3">
-                    <label for="clientemail" class="form-label">Enquire About</label>
+                    <label for="clientenquiery" class="form-label">Enquire About</label>
                     <input type="enquire" class="form-control" id="clientenquiery" name ="clientenquiery" aria-describedby="emailHelp">
                   </div> 
                 <div class="mb-3" id="form-check">
