@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500;600&family=Changa+One&family=Rajdhani&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+.sidebar {
+  background-color: rgb(167, 165, 165);
+  width: 434px;
+  font-family: "Alkatra", cursive;
+  height: 110vh;
+}
+.sidebar nav {
+  padding: 45px;
+}
+.sidebar nav li {
+  list-style: none;
+  font-size: 30px;
+  padding: 33px 0;
+}
+.sidebar nav li a{
+    text-decoration: none;
+    color: rgb(40, 27, 27);
+
+}
+
+.main {
+  /* background-color: yellow; */
+  width: 90vw;
+}
+.container {
+  display: flex;
+}
+.infoContainer {
+  /* background-color: rgb(92, 121, 160); */
+  height: 58vh;
+  width: 80vw;
+  margin: 144px auto;
+  display: flex;
+  justify-content: space-around;
+}
+.devPic img {
+  width: 310px;
+  justify-content: space-around;
+  height: 58vh;
+}
+.devInfo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: "Alkatra", cursive;
+  font-family: "Changa One", cursive;
+  font-family: "Rajdhani", sans-serif;
+}
+.hello {
+  font-size: 50px;
+}
+.name {
+  font-size: 60px;
+  font-weight: bold;
+  font-family: "Alkatra", cursive;
+  font-family: "Changa One", cursive;
+  font-family: "Rajdhani", sans-serif;
+}
+.about {
+    font-size: 40px;
+    font-family: "Alkatra", cursive;
+    font-family: "Changa One", cursive;
+    font-family: "Rajdhani", sans-serif;
+}
+.moreabout{
+    font-size: 22px;
+    margin-top: 23px;
+    margin-bottom: 20px;
+    font-family: "Alkatra", cursive;
+    font-family: "Changa One", cursive;
+    font-family: "Rajdhani", sans-serif;
+}
+.button-1,.button-2,.btn{
+    margin-top:34px ;
+    padding: 9px 14px;
+    border-radius: 22px;
+    color: white;
+    background-color: dodgerblue;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.button-1:hover,.button-2:hover,.btn:hover{
+    background-color: white;
+    color: dodgerblue;
+}
+.contactform{
+    font-family: "Alkatra", cursive;
+    font-family: "Changa One", cursive;
+    font-family: "Rajdhani", sans-serif;
+    padding: 0px 34px;
+    padding-top: 44px;
+    padding-left: 10px;
+
+ }
+.contactform h1{
+    font-family: "Alkatra", cursive;
+    text-align: center;
+}
+.contactform form div{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+} 
+#clientemail,#clientphone,#isclient{
+    width: 26vw;
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+
+
+}
+#emailHelp{
+    font-size: 11px;
+    color: midnightblue;
+    margin: 0 5px;
+}
+#form-check{
+    flex-direction: row;
+}
+#form-check input{
+    width: 24px;
+    margin:3px 0;
+}
+.blogItem {
+    margin: 20px;
+    font-family: "Alkatra", cursive;
+    font-family: "Changa One", cursive;
+    font-family: "Rajdhani", sans-serif;
+}
+h1{
+    font-family: "Alkatra", cursive;
+    margin: 23px;
+}
+
+h2{
+    font-family: "Alkatra", cursive;
+}
+p{
+    font-family: "Alkatra", cursive;
+}
+.intro h2{
+    font-family: "Alkatra", cursive;
+    margin-block-end: 12px;
+}
+.intro p{
+    font-family: "Alkatra", cursive;
+    margin: 12px;
+}
+.skillContainer{
+    padding:12px ;
+}
+.skillItem{
+    display: flex;
+    align-items: center;
+    font-family: "Alkatra", cursive;
+    font-weight: 900;
+}
+.skill{
+    width: 183px;
+    height: 6px;
+    background-color:red ;
+}
+.hundered{
+    width:265px
+    
+}
+.fifty{
+    width: 125px;
+    background-color: aqua;
+    
+}
+.t5{
+    width: 75px;
+    background-color: yellow;
+}
+#clientname{
+    /* width: 325px; */
+    width: 26vw;
+    border-radius: 5px;
+    margin: 6px 0 0 0;
+    padding: 3px;
+}
