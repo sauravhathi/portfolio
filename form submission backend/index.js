@@ -1,8 +1,10 @@
 const bodyParser = require('body-parser');
 const express = require('express');
+const cors = require('cors');
 const dotenv = require('dotenv');
 const { MongoClient } = require('mongodb');
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 dotenv.config();
 const port = 3000;
@@ -24,20 +26,46 @@ async function connectToDatabase() {
 // Connect to the MongoDB server when the Node.js app starts up
 connectToDatabase();
 
-app.post('/form', async (req, res) => {
+// middleware to check if the request body is valid
+const middleware = (req, res, next) => {
+    const { name, phoneNumber, email, message } = req.body;
+    if ((name.length > 3 && name.length < 30) && (phoneNumber.length > 9 && phoneNumber.length < 15) && (email.length > 15 && email.length < 50) && (message.length > 5 && message.length < 200)) {
+        next();
+    } else {
+        res.status(400).send('Invalid request');
+    }
+}
+
+// post form data
+app.post('/form', middleware, async (req, res) => {
 
     const date_time = new Date(); // Get the current date and time
-    const { name, email, message } = req.body; // Get the form data from the request body
+    const { name, phoneNumber, email, message } = req.body; // Get the form data from the request body
     const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLLECTION); // Get the collection <database
 
     try {
         // Insert the form data into the MongoDB collection
-        const result = await collection.insertOne({ name, email, message, date_time });
+        const result = await collection.insertOne({ name, phoneNumber, email, message, date_time });
         console.log(`📄 Inserted a form data into the collection with the _id: ${result.insertedId}`);
         res.send('Successfully submitted');
     } catch (err) {
         console.error(err);
         res.status(500).send('Error submitting form data');
+    }
+});
+
+// get form data
+app.get('/get-form-data', async (req, res) => {
+    const collection = client.db(process.env.DB_NAME).collection(process.env.DB_COLLECTION); // Get the collection <database
+
+    try {
+        // Get all the form data from the MongoDB collection
+        const cursor = collection.find();
+        const results = await cursor.toArray();
+        res.send(results);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Error getting form data');
     }
 });
 
@@ -59,6 +87,6 @@ app.get('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server started on port http://localhost:${port}`);
+    console.log(`✈️  Server started on port http://localhost:${port}`);
 });
 
